@@ -9,7 +9,7 @@ def on_connect(client, userdata, flags, rc): # func for making connection
 	client.subscribe("Humidity")
 	client.subscribe("HI")
 def on_message(client, userdata, msg): # Func for Sending msg
-	print(msg.topic+" "+str(msg.payload))
+	print(msg.topic+" "+str(msg.payload).strip("b"))
 client = mqtt.Client()
 client.on_connect = on_connect
 client.on_message = on_message
